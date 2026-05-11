@@ -1,4 +1,4 @@
-# [A trimodal protein language model enables advanced protein searches](https://www.nature.com/articles/s41587-025-02836-0)
+# [ProTrek: A Trimodal Protein Language Model with Contrastive Learning for Protein-Text Alignment](https://www.nature.com/articles/s41587-025-02836-0)
 <a href="https://doi.org/10.1101/2024.05.30.596740"><img src="https://img.shields.io/badge/Paper-bioRxiv-green" style="max-width: 100%;"></a>
 <a href="http://search-protrek.com/"><img src="https://img.shields.io/badge/🔍ProTrek-red?label=Server" style="max-width: 100%;"></a>
 <a href="https://huggingface.co/westlake-repl/ProTrek_650M"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-yellow?label=Model" style="max-width: 100%;"></a>
@@ -6,7 +6,9 @@
 
 You can download the final accepted version [here](https://drive.google.com/file/d/11rNOUlSr8CSpBc5QsJH8QXa1oje_qyXT/view?usp=drive_link) in Nature Biotechnology, provided for open access purposes.
 
-**Try our online server** [here](http://search-protrek.com/). 
+**Try our online server** [here](http://search-protrek.com/).
+
+**ProTrek** leverages **contrastive learning** to jointly embed protein sequences, structures, and text descriptions, enabling state-of-the-art **protein-text alignment** and retrieval. 
 
 **Finetuning ProTrek for diverse tasks**  [here](https://colab.research.google.com/github/westlake-repl/SaprotHub/blob/main/colab/ColabSeprot.ipynb?hl=en#scrollTo=paX3gluumu7J). 
 
@@ -43,14 +45,11 @@ If you have any question about the paper or the code, feel free to raise an issu
 ColabProTrek has joined [OPMC](https://theopmc.github.io/).
 
 ## Overview
-ProTrek is a tri-modal protein language model that jointly models protein sequence, structure and function (SSF). It employs
-contrastive learning with three core alignment strategies: (1) using structure as the supervision signal for AA
-sequences and vice versa, (2) mutual supervision between sequences and functions, and (3) mutual supervision
-between structures and functions. This tri-modal alignment training enables ProTrek to tightly associate SSF by
-bringing genuine sample pairs (sequence-structure, sequence-function, and structure-function) closer together while
-pushing negative samples farther apart in the latent space.
+ProTrek is a **contrastive protein language model** that jointly models protein sequence, structure and function (SSF) via **protein-text alignment** and multi-modal contrastive learning. It employs contrastive learning with three core alignment strategies: (1) using structure as the supervision signal for AA sequences and vice versa, (2) mutual supervision between sequences and functions (i.e., protein-text alignment), and (3) mutual supervision between structures and functions. This tri-modal alignment training enables ProTrek to tightly associate SSF by bringing genuine sample pairs (sequence-structure, sequence-function, and structure-function) closer together while pushing negative samples farther apart in the latent space.
 
 ProTrek achieves over 30x and 60x improvements in sequence-function and function-sequence retrieval, is 100x faster than Foldseek and MMseqs2 in protein-protein search, and outperforms ESM-2 in 9 of 11 downstream prediction tasks.
+
+By aligning protein embeddings with text descriptions through **contrastive learning**, ProTrek enables precise **protein-text retrieval** and sets a new benchmark for protein-language model alignment.
 
 <img src="figure/img.jpg" style="zoom:33%;" />
 
